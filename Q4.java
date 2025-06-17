@@ -1,4 +1,4 @@
-4.	Write a Java program to illustrate the concept of Thread synchronization.
+// 4.	Write a Java program to illustrate the concept of Thread synchronization.
 package q18198;
 import java.util.Scanner;
 
@@ -65,3 +65,34 @@ public class Main {
 // 1 * 8 = 8
 // 1 * 9 = 9
 // 1	* 10 = 10
+
+
+// ✏️ Shortened Java Code – Thread Synchronization (Multiplication Tables)
+
+import java.util.*;
+
+class TablePrinter implements Runnable {
+    int n;
+    TablePrinter(int n) { this.n = n; }
+
+    public synchronized void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " * " + i + " = " + (n * i));
+            try { Thread.sleep(100); } catch (Exception e) {}
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        Thread[] threads = new Thread[t];
+        for (int i = 0; i < t; i++) {
+            threads[i] = new Thread(new TablePrinter(i + 1));
+            threads[i].start();
+        }
+        for (Thread thread : threads) thread.join();
+        sc.close();
+    }
+}
