@@ -38,3 +38,35 @@ public class MethodOverloadingExample {
         scanner.close();
     }
 }
+
+// MethodOverridingExample
+
+import java.util.*;
+class Calculator {
+	double calculate(double a,double b)
+	{
+		return a+b;
+	}
+	
+}
+class ScientificCalculator extends Calculator {
+    // @Override
+	double calculate(double a,double b)
+	{
+		return a*b;
+	}
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Calculator calculator = new Calculator();
+        System.out.print("a = ");
+        double a=sc.nextDouble();
+        System.out.print("b = ");
+        double b=sc.nextDouble();
+        System.out.println("a+b: " + calculator.calculate(a,b));
+
+        ScientificCalculator scientificCalculator = new ScientificCalculator();
+        System.out.println("a*b: " + scientificCalculator.calculate(a, b));
+    }
+}
