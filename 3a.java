@@ -48,3 +48,51 @@ public class Calc {
     }
 }
 
+Abastractclass implements
+
+package q11286;
+abstract class CalcArea {
+    abstract double triangleArea(double b, double h);
+    abstract double rectangleArea(double l, double b);
+    abstract double squareArea(double s);
+    abstract double circleArea(double r);
+}
+
+class FindArea extends CalcArea {
+    @Override
+    double triangleArea(double b, double h) {
+		return 0.5 * b * h;
+    }
+
+    @Override
+    double rectangleArea(double l, double b) {
+        return l * b;
+    }
+
+    @Override
+    double squareArea(double s) {
+        return s * s;
+    }
+
+    @Override
+    double circleArea(double r) {
+        return 3.14 * r * r;
+    }
+}
+public class Area {
+	public static void main(String args[]) {
+		if (args.length < 2) {
+            System.out.println("Please provide two arguments.");
+            return;
+        }
+			double arg1 = Double.parseDouble(args[0]);
+            double arg2 = Double.parseDouble(args[1]);
+		FindArea area = new FindArea();
+			
+		System.out.println("Area of triangle : "+area.triangleArea(arg1, arg2));
+            System.out.println("Area of rectangle : "+ area.rectangleArea(arg1, arg2));
+            System.out.println("Area of square : "+area.squareArea(arg1));
+            System.out.println("Area of circle : "+area.circleArea(arg2));
+	}
+}
+// Write all the classes with definitions
