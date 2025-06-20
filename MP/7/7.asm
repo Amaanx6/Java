@@ -1,4 +1,5 @@
 Exp 7: SMALLEST ELEMENT IN AN ARRAY 
+
 AIM: 
 To find the smallest element in an array. 
 
