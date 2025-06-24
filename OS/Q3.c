@@ -38,8 +38,10 @@ ALGORITHM:
 // SOURCE CODE: 
 /* fork system call */  
 #include<stdio.h> 
+#include<stdlib.h>
 #include<sys/types.h> 
 #include<unistd.h> 
+#include<sys/wait.h>
 int main() 
 { 
 pid_t p; 
