@@ -55,6 +55,9 @@ printf("I am parent having id %d\n",getpid());
 printf("My child id’s is %d\n",p); 
 } 
 } 
+printf("Completed Succesfully");
+return 0;
+}
 
 
 /*
